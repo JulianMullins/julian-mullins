@@ -1,8 +1,84 @@
+@raleway: "Raleway", "Lucida Grande", sans-serif;
+
+
+/* animations */
+
+.animation (@name; @duration: 2s; @ease;) {
+	-webkit-animation: @name @duration @ease;
+	-moz-animation: @name @duration @ease;
+	-o-animation: @name @duration @ease;
+	animation: @name @duration @ease;
+}
+
+/* float in appearance */
+@-webkit-keyframes appear {
+	0% {
+		bottom: -10px;		
+		opacity: 0;
+	}
+	100% {
+		bottom: 0px;		
+		opacity: 1;
+	}
+}
+@-moz-keyframes appear {
+	0% {
+		bottom: -10px;		
+		opacity: 0;
+	}
+	100% {
+		bottom: 0px;
+		opacity: 1;
+	}
+}
+@-o-keyframes appear {
+	0% {
+		bottom: -10px;
+		opacity: 0;
+	}
+	100% {
+		bottom: 0px;		
+		opacity: 1;
+	}
+}
+@keyframes appear {
+	0% {
+		bottom: -10px;
+		opacity: 0;
+	}
+	100% {
+		bottom: 0px;
+		opacity: 1;
+	}
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px 25px;
+  font: 16px @raleway;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+.main-title {
+	margin-bottom: 0px;
+	.animation(@name: appear; @duration: 2s; @ease: ease);
+}
+
+.main-subtitle {
+	margin-top: 0px;
+	.animation(@name: appear; @duration: 2s; @ease: ease);
+}
+
+.page-name {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	.animation(@name: appear; @duration: 1s; @ease: ease);
 }
