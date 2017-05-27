@@ -1,8 +1,8 @@
 @raleway: "Raleway", "Lucida Grande", sans-serif;
+@border: 1px solid grey;
 
 
 /* animations */
-
 .animation (@name; @duration: 2s; @ease;) {
 	-webkit-animation: @name @duration @ease;
 	-moz-animation: @name @duration @ease;
@@ -10,7 +10,7 @@
 	animation: @name @duration @ease;
 }
 
-/* float in appearance */
+/* float in */
 @-webkit-keyframes appear {
 	0% {
 		bottom: -10px;		
@@ -52,8 +52,9 @@
 	}
 }
 
+/* general styles */
+
 body {
-  padding: 0px 25px;
   font: 16px @raleway;
 }
 
@@ -81,4 +82,37 @@ h1 {
 	right: 0;
 	z-index: 2;
 	.animation(@name: appear; @duration: 1s; @ease: ease);
+}
+
+/* works section specific */
+
+.projects-container {
+	height: 100%;
+	div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border: @border;
+		padding: 25px 10px;
+		height: calc(100% / 3);
+
+		&:hover {
+			background-color: grey;
+			cursor: pointer;
+		};
+	}
+	h4, p {
+		display: none;
+		color: white;
+		.animation(@name: appear; @duration: 1s; @ease: ease);
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.projects-container {
+		div {
+			height: calc(100% /2);
+		}
+	}
 }
