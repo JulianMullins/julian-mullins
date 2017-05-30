@@ -33,5 +33,21 @@ $(document).ready(function() {
 		function() {
 			$("h4").css("display", "none");
 			$("p", this).css("display", "none");
-		});
+	});
+
+	//random language 'hello' text generator
+	var randomHello = function() {
+		var arr = ["hello", "namaste", "hola", "salut", "ciao", "Hallo", "nǐ hǎo", "Ahlan wa Sahlan", "shalom", "marhaba", "olá", "kon'nichiwa", "annyeonghaseyo"];
+		var randNum = Math.floor(Math.random()*arr.length);
+				$("#hello").fadeOut('slow', function() {
+					$("#hello").text(arr[randNum]);
+				});
+	}
+
+	setInterval(function() {
+		randomHello()
+		$("#hello").fadeIn('slow');
+	}, 6000);
+
+
 });
