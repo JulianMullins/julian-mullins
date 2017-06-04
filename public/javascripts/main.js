@@ -46,17 +46,6 @@ $(document).ready(function() {
 			$("p", this).css("display", "none");
 	});
 
-	// $('#factoid-refresh').hover(
-	// 	//hover on
-	// 	function() {
-	// 		$('span', this).
-	// 	},
-	// 	//hover out
-	// 	function() {
-
-	// 	}
-	// );
-
 	//cycle through fun facts on click
 	var factoidCount = 0;
 	$('#factoid-refresh').on('click', function(event) {
@@ -75,22 +64,40 @@ $(document).ready(function() {
 
 		switch(factoidCount) {
 			case 0:
-				photo.attr('src', "../images/costa-rica.jpg");
+				photo.fadeOut('fast', function() {
+					photo.attr('src', "../images/costa-rica.jpg");
+				});
+				photo.fadeIn('slow');
 				break;
 			case 1:
-				photo.attr('src', "../images/spain.jpg");
+				photo.fadeOut('fast', function() {
+					photo.attr('src', "../images/spain.jpg");
+				});
+				photo.fadeIn('slow');
 				break;
 			case 2:
-				photo.attr('src', "../images/break-dance.jpg");
+				photo.fadeOut('fast', function() {
+					photo.attr('src', "../images/break-dance.jpg");
+				});
+				photo.fadeIn('slow');
 				break;
 			case 3:
-				photo.attr('src', "../images/trance.jpg");
+				photo.fadeOut('fast', function() {
+					photo.attr('src', "../images/trance.jpg");					
+				})
+				photo.fadeIn('slow');
 				break;
 			case 4:
-				photo.attr('src', "../images/ballet.jpg");
+				photo.fadeOut('fast', function() {
+					photo.attr('src', "../images/ballet.jpg");					
+				})
+				photo.fadeIn('slow');
 				break;
 			default:
-				photo.attr('src', "../images/profile-pic.jpg");
+				photo.fadeOut('fast', function() {
+					photo.attr('src', "../images/profile-pic.jpg");					
+				})
+				photo.fadeIn('slow');
 		}
 
 		factoidCount++;
