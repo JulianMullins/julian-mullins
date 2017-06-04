@@ -67,37 +67,37 @@ $(document).ready(function() {
 				photo.fadeOut('slow', function() {
 					photo.attr('src', "../images/costa-rica.jpg");
 				})
-				photo.fadeIn('fast');
+				photo.fadeIn('slow');
 				break;
 			case 1:
 				photo.fadeOut('slow', function() {
 					photo.attr('src', "../images/spain.jpg");
 				});
-				photo.fadeIn('fast');
+				photo.fadeIn('slow');
 				break;
 			case 2:
 				photo.fadeOut('slow', function() {
 					photo.attr('src', "../images/break-dance.jpg");
 				});
-				photo.fadeIn('fast');
+				photo.fadeIn('slow');
 				break;
 			case 3:
 				photo.fadeOut('slow', function() {
 					photo.attr('src', "../images/trance.jpg");					
 				})
-				photo.fadeIn('fast');
+				photo.fadeIn('slow');
 				break;
 			case 4:
 				photo.fadeOut('slow', function() {
 					photo.attr('src', "../images/ballet.jpg");					
 				})
-				photo.fadeIn('fast');
+				photo.fadeIn('slow');
 				break;
 			default:
 				photo.fadeOut('slow', function() {
 					photo.attr('src', "../images/profile-pic.jpg");					
 				})
-				photo.fadeIn('fast');
+				photo.fadeIn('slow');
 		}
 
 		factoidCount++;
