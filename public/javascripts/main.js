@@ -6,9 +6,10 @@ $(document).ready(function() {
 	   animationTime: 750,             // AnimationTime let you define how long each section takes to animate
 	   pagination: false,                // You can either show or hide the pagination. Toggle true for show, false for hide.
 	   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-	   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
-	   afterMove: function(index) {
+	   beforeMove: function(index) {
 	   		$(".page-name").css({"opacity": "0"});
+	   },  // This option accepts a callback function. The function will be called before the page moves.
+	   afterMove: function(index) {
 	   		$(".page-name").animate({
 	   			opacity: 1,
 	   			bottom: "0px"
@@ -23,18 +24,6 @@ $(document).ready(function() {
 	   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
 	});
 
-	$(".project").hover(
-		//hover on
-		function() {
-			$("h4", this).css("display", "block");
-			$("p", this).css("display", "block");
-		},
-		//hover out
-		function() {
-			$("h4").css("display", "none");
-			$("p", this).css("display", "none");
-	});
-
 	//random language 'hello' text generator
 	var randomHello = function() {
 		var arr = ["hello", "namaste", "hola", "salut", "ciao", "Hallo", "nǐ hǎo", "Ahlan wa Sahlan", "shalom", "marhaba", "olá", "kon'nichiwa", "annyeonghaseyo"];
@@ -42,12 +31,73 @@ $(document).ready(function() {
 				$("#hello").fadeOut('slow', function() {
 					$("#hello").text(arr[randNum]);
 				});
-	}
+	};
+
+		//project text fade-in on hover
+	$(".project").hover(
+		//hover on
+		function() {
+			$(".project-title", this).css("display", "block");
+			$("p", this).css("display", "block");
+		},
+		//hover out
+		function() {
+			$(".project-title").css("display", "none");
+			$("p", this).css("display", "none");
+	});
+
+	// $('#factoid-refresh').hover(
+	// 	//hover on
+	// 	function() {
+	// 		$('span', this).
+	// 	},
+	// 	//hover out
+	// 	function() {
+
+	// 	}
+	// );
+
+	//cycle through fun facts on click
+	var factoidCount = 0;
+	$('#factoid-refresh').on('click', function(event) {
+		var arr = ["I studied abroad in Costa Rica",
+		"I (also) studied abroad in Spain",
+		"I breakdance",
+		"I'm a trance music lover",
+		"I danced ballet for 4 years", ];
+		var photo = $('.profile-pic');
+
+		if(factoidCount === arr.length) {
+			factoidCount = 0;
+		}
+
+		$("#fun-fact").text(arr[factoidCount]);
+
+		switch(factoidCount) {
+			case 0:
+				photo.attr('src', "../images/costa-rica.jpg");
+				break;
+			case 1:
+				photo.attr('src', "../images/spain.jpg");
+				break;
+			case 2:
+				photo.attr('src', "../images/break-dance.jpg");
+				break;
+			case 3:
+				photo.attr('src', "../images/trance.jpg");
+				break;
+			case 4:
+				photo.attr('src', "../images/ballet.jpg");
+				break;
+			default:
+				photo.attr('src', "../images/profile-pic.jpg");
+		}
+
+		factoidCount++;
+	});
 
 	setInterval(function() {
 		randomHello()
 		$("#hello").fadeIn('slow');
 	}, 6000);
-
-
 });
