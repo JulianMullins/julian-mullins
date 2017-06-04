@@ -57,7 +57,11 @@ $(document).ready(function() {
 		var photo = $('.profile-pic');
 
 		if(factoidCount === arr.length) {
-			factoidCount = 0;
+			photo.fadeOut('slow', function() {
+				photo.attr('src', "../images/profile-pic.jpg");					
+			});
+			$('#fun-fact').text("Fun facts about me →");
+			factoidCount = -1;
 		}
 
 		$("#fun-fact").text(arr[factoidCount]);
@@ -99,7 +103,6 @@ $(document).ready(function() {
 				})
 				photo.fadeIn('fast');
 		}
-
 		factoidCount++;
 	});
 
