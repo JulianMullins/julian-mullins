@@ -68,37 +68,37 @@ $(document).ready(function() {
 
 		switch(factoidCount) {
 			case 0:
-				photo.fadeOut('slow', function() {
+				photo.fadeOut(400, function() {
 					photo.attr('src', "../images/costa-rica.jpg");
 				})
 				photo.fadeIn('fast');
 				break;
 			case 1:
-				photo.fadeOut('slow', function() {
+				photo.fadeOut(400, function() {
 					photo.attr('src', "../images/spain.jpg");
 				});
 				photo.fadeIn('fast');
 				break;
 			case 2:
-				photo.fadeOut('slow', function() {
+				photo.fadeOut(400, function() {
 					photo.attr('src', "../images/break-dance.jpg");
 				});
 				photo.fadeIn('fast');
 				break;
 			case 3:
-				photo.fadeOut('slow', function() {
+				photo.fadeOut(400, function() {
 					photo.attr('src', "../images/trance.jpg");					
 				})
 				photo.fadeIn('fast');
 				break;
 			case 4:
-				photo.fadeOut('slow', function() {
+				photo.fadeOut(400, function() {
 					photo.attr('src', "../images/ballet.jpg");					
 				})
 				photo.fadeIn('fast');
 				break;
 			default:
-				photo.fadeOut('slow', function() {
+				photo.fadeOut(400, function() {
 					photo.attr('src', "../images/profile-pic.jpg");					
 				})
 				photo.fadeIn('fast');
@@ -110,4 +110,14 @@ $(document).ready(function() {
 		randomHello()
 		$("#hello").fadeIn('slow');
 	}, 6000);
+
+	//hack to make factoid link change color on div hover
+	$('.facts-container').hover(
+		function() {
+			$('#factoid-refresh').css('color', "#698aac");
+		},
+		function() {
+			$('#factoid-refresh').css('color', "white");
+		}
+	);
 });
