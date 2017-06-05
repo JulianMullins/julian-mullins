@@ -232,6 +232,11 @@ section {
 		max-width: 1024px;
 		.flex();
 
+		@media screen and (max-width: 768px) {
+			.flex(@direction: column);
+			text-align: center;
+		}
+
 		.profile-pic-container {
 			.flex(@direction: column);
 			background-color: white;
@@ -243,6 +248,10 @@ section {
 				border-radius: 50%;
 				.border(@width: 2px; @color: lighten(@midnight-blue, 35%));
 				max-width: 320px;
+
+				@media screen and (max-width: 768px) {
+					max-width: 270px;
+				} 
 			}
 			.resume-btn {
 				color: lighten(@midnight-blue, 35%);
@@ -255,6 +264,10 @@ section {
 			padding-left: 50px;
 			line-height: 1.5;
 			text-align: justify;
+
+			@media screen and (max-width: 768px) {
+				padding-left: 0;
+			}
 
 			p:first-child {
 				font-size: 18px;
