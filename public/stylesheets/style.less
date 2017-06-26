@@ -115,16 +115,20 @@ section {
 		.planet {
 			position: absolute;
 			width: 75%;
-			max-width: 768px;
+			max-width: 700px;
 			z-index: 0;
 			.animation(@name: rotate; @duration: 120s; @ease: linear; infinite);
 		}
 		.clouds {
 			 position: absolute;
 			 width: 65%;
-			 max-width: 768px;
+			 max-width: 700px;
 			 z-index: 1;
 			.animation(@name: rotate; @duration: 40s; @ease: linear; infinite);	
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 	.next-page-container {
@@ -161,9 +165,10 @@ section {
 			.border();
 			padding: 0;
 			height: calc(100% / 3);
+			overflow: hidden;
 
 			&:hover {
-				background-color: grey;
+				background-color: rgba(44, 62, 80,0.5);
 				cursor: pointer;
 			};
 			@media screen and (min-width: 993px) {

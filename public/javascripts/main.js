@@ -30,18 +30,35 @@ $(document).ready(function() {
 	});
 
 	//random language 'hello' text generator
+	var helloCount = 0;
 	var randomHello = function() {
-		var arr = ["hello", "namaste", "hola", "salut", "ciao", "Hallo", "nǐ hǎo", "Ahlan wa Sahlan", "shalom", "marhaba", "olá", "kon'nichiwa", "annyeonghaseyo"];
-		var randNum = Math.floor(Math.random()*arr.length);
+		var arr = ["hello", "hola", "namaste", "salut", "ciao", "Hallo", "nǐ hǎo", "Ahlan wa Sahlan", "shalom", "marhaba", "olá", "kon'nichiwa", "annyeonghaseyo"];
 		$("#hello").fadeOut('slow', function() {
-			$("#hello").text(arr[randNum]);
+			$("#hello").text(arr[helloCount]);
 		});
+		helloCount++;
 	};
 
 	setInterval(function() {
 		randomHello()
 		$("#hello").fadeIn('slow');
 	}, 6000);
+
+	//on clouds hover
+	$('.clouds').hover(
+		function() {
+			$('.planet').css({
+				'transition': 'max-width 2s',
+				'max-width': '768px'
+			});
+		},
+		function() {
+			$('.planet').css({
+				'transition': 'max-width 2s',
+				'max-width': '700px'
+			});
+		}
+	);
 
 		//project text fade-in on hover
 	$(".project").hover(
