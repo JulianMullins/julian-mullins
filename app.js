@@ -8,6 +8,9 @@ var lessMiddleware = require('less-middleware');
 
 var index = require('./routes/index');
 
+var model = require('./models/models');
+var Work = model.Work;
+
 var app = express();
 
 // view engine setup
