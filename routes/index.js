@@ -15,9 +15,15 @@ router.get('/', function(req, res, next) {
 });
 
 // GET individual work page
-router.get('/work/:id', function(req, res, next) {
-  var workID = req.params.id;
-  var workItem = Work[workID-1];
+router.get('/work/:slug', function(req, res, next) {
+  var slug = req.params.slug;
+  var workItem;
+
+  for(let i=0; i<Work.length; i++) {
+    if(Work[i].slug == slug) {
+      workItem = Work[i];
+    }
+  }
 
   res.render('work', {
     work: workItem
