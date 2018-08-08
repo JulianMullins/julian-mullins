@@ -21,7 +21,7 @@ $(document).ready(function() {
 	   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
 	                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
 	                                    // the browser's width is less than 600, the fallback will kick in.
-	   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+	   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
 	});
 
 	//move down page on arrow click
@@ -29,32 +29,38 @@ $(document).ready(function() {
 		$('.main').moveDown();
 	});
 
-	//random language 'hello' text generator
+	// 'hello' languages generator
 	var helloCount = 0;
 	var randomHello = function() {
 		var arr = ["hello", "hola", "namaste", "salut", "ciao", "Hallo", "nǐ hǎo", "Ahlan wa Sahlan", "shalom", "marhaba", "olá", "kon'nichiwa", "annyeonghaseyo"];
+
 		$("#hello").fadeOut('slow', function() {
 			$("#hello").text(arr[helloCount]);
 		});
-		helloCount++;
+
+		if(helloCount === arr.length-1) {
+			helloCount = 0;
+		} else {
+			helloCount++;
+		}
 	};
 
 	setInterval(function() {
 		randomHello()
 		$("#hello").fadeIn('slow');
-	}, 6000);
+	}, 4000);
 
 	//on clouds hover
 	$('.clouds').hover(
 		function() {
 			$('.planet').css({
-				'transition': 'max-width 2s',
+				'transition': 'max-width 1s',
 				'max-width': '768px'
 			});
 		},
 		function() {
 			$('.planet').css({
-				'transition': 'max-width 2s',
+				'transition': 'max-width 1s',
 				'max-width': '700px'
 			});
 		}
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
 		if(factoidCount === arr.length) {
 			photo.fadeOut('slow', function() {
-				photo.attr('src', "../images/profile-pic.jpg");					
+				photo.attr('src', "../images/profile-pic.jpg");
 			});
 			$('#fun-fact').text("Fun facts about me →");
 			factoidCount = -1;
@@ -114,19 +120,19 @@ $(document).ready(function() {
 				break;
 			case 3:
 				photo.fadeOut(400, function() {
-					photo.attr('src', "../images/trance.jpg");					
+					photo.attr('src', "../images/trance.jpg");
 				})
 				photo.fadeIn('fast');
 				break;
 			case 4:
 				photo.fadeOut(400, function() {
-					photo.attr('src', "../images/ballet.jpg");					
+					photo.attr('src', "../images/ballet.jpg");
 				})
 				photo.fadeIn('fast');
 				break;
 			default:
 				photo.fadeOut(400, function() {
-					photo.attr('src', "../images/profile-pic.jpg");					
+					photo.attr('src', "../images/profile-pic.jpg");
 				})
 				photo.fadeIn('fast');
 		}
