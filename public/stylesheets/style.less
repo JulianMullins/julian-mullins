@@ -1,4 +1,4 @@
-@raleway: "Raleway", "Lucida Grande", sans-serif;
+@raleway: "Lato", "Lucida Grande", sans-serif;
 
 /* color variables */
 @sky-blue: rgb(52, 152, 219); //#3498db
@@ -23,7 +23,7 @@
     background: -webkit-linear-gradient(@color1, @color2); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(@color1, @color2); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(@color1, @color2); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(@color1, @color2); /* Standard syntax */	
+    background: linear-gradient(@color1, @color2); /* Standard syntax */
 }
 
 .background(@linrad: linear; @direction: top; @color1; @color2) when (@linrad = radial) {
@@ -31,7 +31,7 @@
     background: -webkit-radial-gradient(@color1, @color2); /* For Safari 5.1 to 6.0 */
     background: -o-radial-gradient(@color1, @color2); /* For Opera 11.1 to 12.0 */
     background: -moz-radial-gradient(@color1, @color2); /* For Firefox 3.6 to 15 */
-    background: radial-gradient(@color1, @color2); /* Standard syntax */	
+    background: radial-gradient(@color1, @color2); /* Standard syntax */
 }
 
 
@@ -64,8 +64,8 @@ a {
 	text-decoration: none !important;
 }
 
-h1 {
-	font-size: 48px;
+h2 {
+	font-size: 40px;
 }
 
 .page-name {
@@ -81,8 +81,38 @@ section {
 	padding: 0px 25px;
 }
 
-.invisible {
-	display: none;
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+nav {
+	margin-top: 45px;
+	position: fixed;
+	right: 25px;
+	width: 400px;
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /* landing section specific */
@@ -94,12 +124,14 @@ section {
 			font-size: 32px;
 		}
 	}
+
 	.main-header {
 		.flex(@direction: column; @align: flex-start);
-		height: 10%;
+		margin-top: 25px;
+		position: absolute;
+		z-index: 2;
 
 		.main-title {
-			padding-top: 25px;
 			.animation(@name: appear; @duration: 2s; @ease: ease);
 		}
 		.main-subtitle {
@@ -107,10 +139,11 @@ section {
 			.animation(@name: appear; @duration: 2s; @ease: ease);
 		}
 	}
+
 	.planet-holder {
 		.flex();
 		width: 100%;
-		height: 85%;
+		height: 100%;
 
 		.planet {
 			position: absolute;
@@ -119,12 +152,13 @@ section {
 			z-index: 0;
 			.animation(@name: rotate; @duration: 120s; @ease: linear; infinite);
 		}
+
 		.clouds {
 			 position: absolute;
 			 width: 65%;
 			 max-width: 700px;
 			 z-index: 1;
-			.animation(@name: rotate; @duration: 40s; @ease: linear; infinite);	
+			.animation(@name: rotate; @duration: 40s; @ease: linear; infinite);
 
 			&:hover {
 				cursor: pointer;
@@ -214,7 +248,7 @@ section {
 
 		@media screen and (max-width: 768px) {
 			display: none;
-		}	
+		}
 	}
 
 	.profile-container {
@@ -244,7 +278,7 @@ section {
 
 					@media screen and (max-width: 768px) {
 						max-width: 270px;
-					} 
+					}
 				}
 			}
 			.resume-btn {

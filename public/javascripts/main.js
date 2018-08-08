@@ -24,6 +24,11 @@ $(document).ready(function() {
 	   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
 	});
 
+	// page move functions
+	var movePage = function(num) {
+		$(".main").moveTo(num);
+	}
+
 	//move down page on arrow click
 	$('.arrow-down').on('click', function() {
 		$('.main').moveDown();
@@ -50,8 +55,24 @@ $(document).ready(function() {
 		$("#hello").fadeIn('slow');
 	}, 4000);
 
+	// navigation link movement
+	$("#nav-works").click(function(evt) {
+		evt.preventDefault();
+		movePage(2);
+	});
+
+	$("#nav-about").click(function(evt) {
+		evt.preventDefault();
+		movePage(3);
+	});
+
+	$("#nav-contact").click(function(evt) {
+		evt.preventDefault();
+		movePage(4);
+	});
+
 	//on clouds hover
-	$('.clouds').hover(
+	$(".clouds").hover(
 		function() {
 			$('.planet').css({
 				'transition': 'max-width 1s',
@@ -59,7 +80,7 @@ $(document).ready(function() {
 			});
 		},
 		function() {
-			$('.planet').css({
+			$(".planet").css({
 				'transition': 'max-width 1s',
 				'max-width': '700px'
 			});
