@@ -71,22 +71,6 @@ $(document).ready(function() {
 		movePage(4);
 	});
 
-	//on clouds hover
-	$(".clouds").hover(
-		function() {
-			$('.planet').css({
-				'transition': 'max-width 1s',
-				'max-width': '768px'
-			});
-		},
-		function() {
-			$(".planet").css({
-				'transition': 'max-width 1s',
-				'max-width': '700px'
-			});
-		}
-	);
-
 		//project text fade-in on hover
 	$(".project").hover(
 		//hover on

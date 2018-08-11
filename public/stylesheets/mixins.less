@@ -1,14 +1,15 @@
-.border(@width: 1px; @style: solid; @color: grey) {
+.border(@width: 1px; @style: solid; @color: @color-dark1) {
 	border-style: @style;
 	border-width: @width;
 	border-color: @color;
 }
 
-.flex(@direction: row; @justify: center; @align: center) {
+.flex(@direction: row; @justify: center; @align: center; @wrap: nowrap) {
 	display: flex;
 	flex-direction: @direction;
 	justify-content: @justify;
 	align-items: @align;
+	flex-wrap: @wrap;
 }
 
 .background(@linrad: linear; @direction: top; @color1; @color2) when (@linrad = linear) {
@@ -29,7 +30,7 @@
 
 
 /* animations */
-.animation (@name; @duration: 2s; @ease: linear; @animation-iteration-count: 1) {
+.animation (@name; @duration: @transition-duration; @ease: @transition-easing; @animation-iteration-count: 1) {
 	-webkit-animation: @name @duration @ease @animation-iteration-count;
 	-moz-animation: @name @duration @ease @animation-iteration-count;
 	-o-animation: @name @duration @ease @animation-iteration-count;
@@ -37,7 +38,7 @@
 
 }
 
-.transition (@property: all; @timing: ease; @duration) {
+.transition (@property: all; @timing: @transition-easing; @duration) {
 	-webkit-transition: @property @timing @duration;
 	-moz-transition: @property @timing @duration;
 	transition: @property @timing @duration;
