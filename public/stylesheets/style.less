@@ -5,7 +5,7 @@
 /* general styles */
 
 body {
-	background-color: @color-dark1;
+	background-color: @color-light;
 	font: @font-size @font-family;
 	padding: 0 !important;
 	line-height: @line-height;
@@ -34,7 +34,7 @@ a {
 	text-decoration: none !important;
 
 	&:hover {
-		color: @color-interactive1;
+		color: @color-interactive2;
 		transition-duration: @transition-duration;
 	}
 }
@@ -95,8 +95,51 @@ nav {
   width: 1px;
 }
 
+// work components
+.highlights-container {
+	.flex(@wrap: wrap);
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+
+	.highlight {
+		background-color: @color-light;
+		border-radius: @border-radius;
+		box-shadow: 0 @gridspacing/4 @gridspacing 0 @color-dark;
+		color: @color-dark1;
+		cursor: pointer;
+		.flex(@direction: column);
+		height: 25vw;
+		margin: @gridspacing * 2;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		width: 25vw;
+		user-select: none;
+		.transition(@duration: @transition-duration/2);
+
+		&:hover {
+			box-shadow: 0 @gridspacing/2 @gridspacing*2 0 @color-dark;
+			transform: translateY(-@gridspacing);
+		}
+
+		.highlight-content {
+			background-color: @color-interactive2;
+			color: @color-light;
+			.flex(@direction: column);
+			width: 100%;
+			height: 25%;
+		}
+
+		img {
+			height: 75%;
+		}
+	}
+}
+
 /* landing section specific */
 #section1 {
+	background-color: @color-dark1;
 	.flex(@direction: column);
 
 	#hello {
@@ -122,47 +165,7 @@ nav {
 	}
 
 	.highlights-container {
-		.flex(@wrap: wrap);
-
-		.highlight {
-			background-color: @color-light;
-			border-radius: @border-radius;
-			box-shadow: 0 @gridspacing/4 @gridspacing 0 @color-dark;
-			color: @color-dark1;
-			cursor: pointer;
-			.flex(@direction: column);
-			height: 25vw;
-			margin: @gridspacing * 2;
-			overflow: hidden;
-			position: relative;
-			text-align: center;
-			width: 25vw;
-			user-select: none;
-			.transition(@duration: @transition-duration/4);
-
-			&:hover {
-				box-shadow: 0 @gridspacing/2 @gridspacing*2 0 @color-dark;
-				transform: translateY(-@gridspacing);
-			}
-
-			.highlight-content {
-				background-color: @color-interactive2;
-				bottom: 0;
-				color: @color-light;
-				.flex(@direction: column);
-				padding: @gridspacing * 2;
-				width: 100%;
-				height: 25%;
-			}
-
-			img {
-				height: 75%;
-			}
-		}
-
-		// &:after {
-		// 	content: 'Experience highlights'
-		// }
+		padding-top: @gridspacing * 5;
 	}
 
 	.next-page {
@@ -171,8 +174,8 @@ nav {
 		left: 50%;
 		max-width: @gridspacing * 5;
 		z-index: @z-index-high;
-		.animation(@name: bounce; @duration: @transition-duration*2; @ease: @transition-easing; infinite);
-		.transition(@duration: @transition-duration);
+		.animation(@name: bounce; @duration: @transition-duration*4; @ease: @transition-easing; infinite);
+		.transition(@duration: @transition-duration*2);
 
 		&:hover {
 			.animation(@name: none; @duration: 0s; @ease: @transition-easing; infinite);
@@ -184,45 +187,19 @@ nav {
 /* works section specific */
 
 #section2 {
-	padding: 0px;
-	background-color: @color-light;
+	background-color: @color-interactive2;
 
-	.projects-container {
-		height: 100%;
-		div {
-			.flex(@direction: column);
-			.border();
-			padding: 0;
-			height: calc(100% / 3);
-			overflow: hidden;
+	.highlights-container {
+			.flex(@justify: flex-start; @wrap: wrap);
 
-			&:hover {
-				background-color: @color-dark;
-				cursor: pointer;
-			};
-			@media screen and (min-width: 993px) {
-				height: 50%;
+			.highlight {
+				height: 20vw;
+				width: 20vw;
 			}
 
-			.project-content {
-				z-index: @z-index-medium;
-				width: 100%;
-				height: 100%;
-				padding: @gridspacing * 3 @gridspacing;
-
-				.project-title, p {
-					display: none;
-					color: @color-light;
-					.animation(@name: appear; @duration: @transition-duration; @ease: @transition-easing);
-				}
+			.highlight-content {
+				background-color: @color-interactive2;
 			}
-
-			img {
-				height: 100%;
-				z-index: @z-index-low;
-				position: absolute;
-			}
-		}
 	}
 }
 
@@ -309,7 +286,7 @@ nav {
 			border-bottom-left-radius: @gridspacing;
 			border-bottom-right-radius: @gridspacing;
 			box-shadow: inset 0 0 0 0 @color-light;
-			.transition (@duration: @transition-duration / 2);
+			.transition (@duration: @transition-duration);
 
 			&:hover {
 				box-shadow: inset 420px 0 0 0 @color-light;

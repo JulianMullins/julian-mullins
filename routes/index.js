@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 // GET individual work page
-router.get('/work/:slug', function(req, res, next) {
+router.get('/:slug', function(req, res, next) {
   var slug = req.params.slug;
   var workItem;
 

@@ -30,7 +30,7 @@ $(document).ready(function() {
 	}
 
 	//move down page on arrow click
-	$('.arrow-down').on('click', function() {
+	$('.next-page').on('click', function() {
 		$('.main').moveDown();
 	});
 

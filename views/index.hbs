@@ -53,18 +53,18 @@
 	<!-- portfolio/work section -->
 	<section id="section2">
 		<h2 class="page-name">works</h2>
-		<div class="row projects-container">
+		<div class="highlights-container">
 
 			{{#each work}}
-				<a href="/work/{{this.slug}}">
-					<div class="col-xs-12 col-sm-6 col-md-4 project">
-						<div class="project-content">
-							<h4 class="project-title">{{this.name}}</h4>
-							<p>{{this.role}}</p>
-						</div>
-						<img src="../images/cortex-home.png" class="project-img">
+			<a href="{{this.slug}}">
+				<div class="highlight">
+					<img src="../images/cortex-home.jpg">
+					<div class="highlight-content">
+						<h2>{{this.name}}</h2>
+						<p>{{this.role}}</p>
 					</div>
-				</a>
+				</div>
+			</a>
 			{{/each}}
 
 		</div>
