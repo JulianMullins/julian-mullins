@@ -127,12 +127,25 @@ nav {
 			background-color: @color-interactive2;
 			color: @color-light;
 			.flex(@direction: column);
-			width: 100%;
 			height: 25%;
+			overflow: hidden;
+			width: 100%;
 		}
 
-		img {
+		.highlight-image {
+			.flex();
 			height: 75%;
+			overflow: hidden;
+			padding: @gridspacing * 2;
+
+			img {
+				max-width: 100%;
+				.transition(@duration: @transition-duration);
+
+				&:hover {
+					max-width: 103%;
+				}
+			}
 		}
 	}
 }
@@ -198,7 +211,7 @@ nav {
 			}
 
 			.highlight-content {
-				background-color: @color-interactive2;
+				background-color: @color-dark1;
 			}
 	}
 }
@@ -206,61 +219,90 @@ nav {
 /* about section specific */
 #section3 {
 	.flex(@direction: column);
-	.background(@color1: lighten(@color-dark, 30%); @color2: @color-dark);
-	color: @color-light;
-
-	.about-background {
-		position: absolute;
-		top: @gridspacing * 3;
-		right: @gridspacing * 3;
-		width: 60%;
-		max-width: 420px;
-		opacity: .6;
-		.animation(@name: rotate; @duration: 120s; @ease: linear; infinite);
-
-		@media screen and (max-width: 768px) {
-			display: none;
-		}
-	}
+	background-color: @color-interactive1;
 
 	.profile-container {
-		max-width: 1024px;
-		z-index: @z-index-low;
 		.flex();
+		width: 70%;
+		z-index: @z-index-low;
 
 		@media screen and (max-width: 768px) {
 			.flex(@direction: column);
 			text-align: center;
 		}
 
-		.profile-pic-container {
-			.flex(@direction: column);
-			background-color: @color-light;
-			border-top-left-radius: @gridspacing;
-			border-top-right-radius: @gridspacing;
-			padding: @gridspacing * 2;
+		.infobar-container {
+			width: 40%;
 
-			.picture-border {
-				border-radius: 50%;
-				.border(@width: 2px; @color: lighten(@color-dark, 35%));
+			.profile-pic-container {
+				.flex(@direction: column);
+				background-color: @color-light;
+				border-top-left-radius: @gridspacing;
+				border-top-right-radius: @gridspacing;
+				padding: @gridspacing * 2;
+				width: 100%;
 
-				.profile-pic {
+				.picture-border {
 					border-radius: 50%;
-					max-width: 320px;
+					.border(@width: 2px; @color: @color-interactive1);
 
-					@media screen and (max-width: 768px) {
-						max-width: 270px;
+					.profile-pic {
+						border-radius: 50%;
+						max-width: 320px;
+
+						@media screen and (max-width: 768px) {
+							max-width: 270px;
+						}
 					}
 				}
+				.resume-btn {
+					color: @color-interactive1;
+					margin-top: @gridspacing * 2;
+					font-weight: bold;
+				}
 			}
-			.resume-btn {
-				color: lighten(@color-dark, 35%);
+
+			.facts-container {
+				cursor: pointer;
+				.flex();
+				height: @gridspacing * 7;
+				width: 100%;
 				margin-top: @gridspacing * 2;
-				font-weight: bold;
+				color: @color-light;
+				.border(@width: 2px; @color: @color-light);
+				border-bottom-left-radius: @gridspacing;
+				border-bottom-right-radius: @gridspacing;
+				box-shadow: inset 0 0 0 0 @color-light;
+				.transition (@duration: @transition-duration);
+				user-select: none;
+
+				&:hover {
+					box-shadow: inset 420px 0 0 0 @color-light;
+					color: @color-interactive1;
+				}
+
+				.factoid-container {
+					.flex(@justify: flex-start);
+					height: 100%;
+					width: 90%;
+					padding-left: @gridspacing;
+					h4 {
+						margin: 0;
+					}
+				}
+				.refresh-container {
+					.flex();
+					height: 100%;
+					width: 10%;
+					img {
+						height: 50%;
+					}
+				}
 			}
 		}
 
 		.profile-content {
+			width: 60%;
 			padding-left: @gridspacing * 6;
 			text-align: justify;
 
@@ -274,40 +316,6 @@ nav {
 			}
 			h2 {
 				text-align: left;
-			}
-		}
-		.facts-container {
-			.flex();
-			padding: @gridspacing * 2;
-			max-width: 420px;
-			margin-top: @gridspacing * 3;
-			color: @color-light;
-			.border(@width: 2px; @color: @color-light);
-			border-bottom-left-radius: @gridspacing;
-			border-bottom-right-radius: @gridspacing;
-			box-shadow: inset 0 0 0 0 @color-light;
-			.transition (@duration: @transition-duration);
-
-			&:hover {
-				box-shadow: inset 420px 0 0 0 @color-light;
-    			color: lighten(@color-dark, 35%);
-			}
-
-			.factoid-container {
-				width: 95%;
-				h4 {
-					margin: 0;
-				}
-			}
-			.refresh-container {
-				width: 5%;
-				a {
-					color: @color-light;
-
-					span:hover {
-						.animation(@name: rotate; @duration: 10s; @ease: linear; infinite);
-					}
-				}
 			}
 		}
 	}

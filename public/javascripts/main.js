@@ -72,21 +72,19 @@ $(document).ready(function() {
 	});
 
 		//project text fade-in on hover
-	$(".project").hover(
+	$(".highlight").hover(
 		//hover on
 		function() {
-			$(".project-title", this).css("display", "block");
-			$("p", this).css("display", "block");
+			$(this).find("img").css("max-width", "103%");
 		},
 		//hover out
 		function() {
-			$(".project-title").css("display", "none");
-			$("p", this).css("display", "none");
+			$(this).find("img").css("max-width", "100%");
 	});
 
 	//cycle through fun facts on click
 	var factoidCount = 0;
-	$('#factoid-refresh').on('click', function(event) {
+	$('.facts-container').on('click', function(event) {
 		var arr = ["I studied abroad in Costa Rica",
 		"I (also) studied abroad in Spain",
 		"I breakdance",
