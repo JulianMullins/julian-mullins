@@ -14,37 +14,51 @@ function selectItems(num, arr) {
 var works = [
   {
     id: 1,
+    name: 'TripRiff',
+    slug: 'tripriff',
+    role: 'Product Manager / Front-End',
+    img: 'cortex-mockups.png'
+  },
+  {
+    id: 2,
     name: 'Cortex Game',
     slug: 'cortex-game',
     role: 'Product Manager / Front-End',
     img: 'cortex-mockups.png'
   },
   {
-    id: 2,
+    id: 3,
     name: 'TreadStone Studios',
     slug: 'treadstone-studios',
     role: 'Graphic Design',
     img: 'treadstone-mockups.png'
   },
   {
-    id: 3,
-    name: 'TripRiff',
-    slug: 'tripriff',
-    role: 'Product Manager',
-    img: 'cortex-mockups.png'
-  },
-  {
     id: 4,
-    name: 'Lorem Ipsum',
-    slug: 'lorem-ipsum2',
-    role: 'blah blah',
+    name: 'Concentric Sky',
+    slug: 'concentric-sky',
+    role: 'Front-End',
     img: 'cortex-mockups.png'
   },
   {
     id: 5,
-    name: 'Lorem Ipsum',
-    slug: 'lorem-ipsum3',
-    role: 'blah blah',
+    name: 'FemResources',
+    slug: 'femresources',
+    role: 'Website Design',
+    img: 'cortex-mockups.png'
+  },
+  {
+    id: 6,
+    name: 'IMDb Predictor',
+    slug: 'imdb',
+    role: 'Developer',
+    img: 'cortex-mockups.png'
+  },
+  {
+    id: 7,
+    name: 'MBTA Helper',
+    slug: 'mbta',
+    role: 'Developer',
     img: 'cortex-mockups.png'
   },
 ];

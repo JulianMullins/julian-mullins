@@ -96,7 +96,7 @@ $(document).ready(function() {
 			photo.fadeOut('slow', function() {
 				photo.attr('src', "../images/profile-pic.jpg");
 			});
-			$('#fun-fact').text("Fun facts about me →");
+			$('#fun-fact').text("Fun facts about me");
 			factoidCount = -1;
 		}
 
