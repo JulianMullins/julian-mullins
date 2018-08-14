@@ -17,7 +17,7 @@ var works = [
     name: 'TripRiff',
     slug: 'tripriff',
     role: 'Product Manager / Front-End',
-    img: 'cortex-mockups.png'
+    img: 'tripriff-mockups.png'
   },
   {
     id: 2,
