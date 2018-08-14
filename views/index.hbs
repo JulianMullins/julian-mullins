@@ -1,7 +1,7 @@
 <div class="main">
 	<!-- landing section -->
 	<section id="section1">
-		<!-- <h2 class="page-name" id="hello">hello</h2> -->
+		<h2 class="page-name" id="hello">hello</h2>
 
 		<div class="main-header">
 			<h1 class="main-title">{{title}}</h1>
@@ -17,39 +17,19 @@
 		</nav>
 
 		<div class="highlights-container">
-			<a href="#">
-				<div class="highlight">
-					<div class="highlight-image">
-						<img src="../images/cortex-mockups.png">
+			{{#each selectedWork}}
+				<a href="{{this.slug}}">
+					<div class="highlight">
+						<div class="highlight-image">
+							<img src="../images/{{this.img}}">
+						</div>
+						<div class="highlight-content">
+							<h2>{{this.name}}</h2>
+							<p>{{this.role}}</p>
+						</div>
 					</div>
-					<div class="highlight-content">
-						<h2>Cortex Game</h2>
-						<p>Product Manager / Front-End</p>
-					</div>
-				</div>
-			</a>
-			<a href="#">
-				<div class="highlight">
-					<div class="highlight-image">
-						<img src="../images/treadstone-mockups.png">
-					</div>
-					<div class="highlight-content">
-						<h2>TreadStone Studios</h2>
-						<p>Graphic Design</p>
-					</div>
-				</div>
-			</a>
-			<a href="#">
-				<div class="highlight">
-					<div class="highlight-image">
-						<img src="../images/treadstone-mockups.png">
-					</div>
-					<div class="highlight-content">
-						<h2>TreadStone Studios</h2>
-						<p>Graphic Design</p>
-					</div>
-				</div>
-			</a>
+				</a>
+			{{/each}}
 		</div>
 
 
@@ -83,6 +63,14 @@
 		<h2 class="page-name">about</h2>
 
 		<div class="profile-container">
+			<div class="profile-content">
+				<h2>Hi, I'm Julian Mullins.</h2>
+				<p>I'm an entrepreneur, designer and developer from Eugene, Oregon.</p>
+				<p>I am currently working as a product manager and developer for TripRiff, a travel platform built by travelers, for travelers. Having assisted in the launch of our web app MVP (<a href="https://www.tripriff.com" target="_blank">www.tripriff.com</a>), I am now gathering user feedback and helping to redesign and build out the next iteration of the product, centered around our company's mission to broaden the worldviews of explorers.</p>
+				<p>I recently graduated magna cum laude with a degree in business administration at Babson College (Money Magazine's #1 college in the U.S.). Last year I studied abroad in Seville, Spain and conducted an internship at a Spanish software development firm. The year prior, I was a participant in IFSA-Butler's Spanish immersion program in Costa Rica where I studied economics and international relations while expanding my cultural and environmental horizons in a rich and diverse country.</p>
+				<p>I am a quick learner, detail-oriented, and self-starting, with excellent time-management skills and a knack for teamwork and leadership. While expanding my knowledge of business and technology, I am dedicated to cultivating strong personal relationships.</p>
+			</div>
+
 			<div class="infobar-container">
 				<div class="profile-pic-container">
 					<div class="picture-border">
@@ -108,12 +96,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="profile-content">
-				<h2>Hi, I'm Julian Mullins.</h2>
-				<p>I'm an entrepreneur, designer and developer from Eugene, Oregon. As a coding bootcamp attendee and self-taught designer, I am a firm believer in life-long learning and a passionate creator of new things.</p>
-				<p></p>
-			</div>
 		</div>
 	</section>
 
@@ -121,19 +103,19 @@
 	<section id="section4">
 		<h2 class="page-name">contact</h2>
 		<div class="contact-content">
-			<p>Looking to collaborate on a project, need design or development help, or simply want to chat? I'm usually found somewhere around the globe, but thanks to the Internet, feel free to reach out at any time! I look forward to hearing from you.</p>
+			<p>Want to collaborate on a project, need some design or development help, or simply want to chat? I'm usually found somewhere around the globe, but thanks to the wonders of the Internet, please feel free to reach out at any time. I'm excited to hear from you!</p>
 			<div class="contact-buttons">
-					<a class="contact-button" href="mailto:mullinsjulian@gmail.com">
-						<span class="glyphicon glyphicon-send"></span>
-						Email
+					<a href="mailto:mullinsjulian@gmail.com" target="_blank">
+						<img src="../images/mail.svg">
 					</a>
-					<a class="contact-button">
-						<span class="glyphicon glyphicon-refresh"></span>
-						LinkedIn
+					<a href="https://github.com/JulianMullins" target="_blank">
+						<img src="../images/github.svg">
 					</a>
-					<a class="contact-button">
-						<span class="glyphicon glyphicon-refresh"></span>
-						Instagram
+					<a href="https://www.linkedin.com/in/mullinsjulian/" target="_blank">
+						<img src="../images/linkedin.svg">
+					</a>
+					<a href="https://www.instagram.com/mullinsjulian/" target="_blank">
+						<img src="../images/instagram.svg">
 					</a>
 			</div>
 		</div>

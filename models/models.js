@@ -1,3 +1,15 @@
+function selectItems(num, arr) {
+  let returnArr = [];
+
+  for (var i=0; i<arr.length; i++) {
+    if(i === num) {
+      return returnArr;
+    }
+
+    returnArr.push(arr[i]);
+  }
+}
+
 // Work data
 var works = [
   {
@@ -37,6 +49,9 @@ var works = [
   },
 ];
 
+var selectedWorks = selectItems(3, works);
+
 module.exports = {
-  Work: works
+  Work: works,
+  SelectedWork: selectedWorks
 }

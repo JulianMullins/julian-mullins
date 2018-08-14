@@ -3,6 +3,7 @@ var router = express.Router();
 
 var model = require('../models/models');
 var Work = model.Work;
+var SelectedWork = model.SelectedWork;
 
 // GET home page
 router.get('/', function(req, res, next) {
@@ -10,7 +11,8 @@ router.get('/', function(req, res, next) {
   res.render('index', {
   	title: 'Julian Mullins',
   	subtitle: "Entrepreneur, Developer & Designer",
-    work: Work
+    work: Work,
+    selectedWork: SelectedWork
   });
 });
 

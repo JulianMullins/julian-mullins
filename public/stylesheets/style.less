@@ -55,6 +55,7 @@ p {
 
 section {
 	padding: @gridspacing * 3;
+	overflow: hidden;
 }
 
 ul {
@@ -219,11 +220,12 @@ nav {
 /* about section specific */
 #section3 {
 	.flex(@direction: column);
-	background-color: @color-interactive1;
+	background-color: @color-light;
+	color: @color-dark1;
 
 	.profile-container {
 		.flex();
-		width: 70%;
+		width: 75%;
 		z-index: @z-index-low;
 
 		@media screen and (max-width: 768px) {
@@ -236,7 +238,7 @@ nav {
 
 			.profile-pic-container {
 				.flex(@direction: column);
-				background-color: @color-light;
+				background-color: @color-interactive2;
 				border-top-left-radius: @gridspacing;
 				border-top-right-radius: @gridspacing;
 				padding: @gridspacing * 2;
@@ -244,7 +246,7 @@ nav {
 
 				.picture-border {
 					border-radius: 50%;
-					.border(@width: 2px; @color: @color-interactive1);
+					.border(@width: @gridspacing/2; @color: @color-light);
 
 					.profile-pic {
 						border-radius: 50%;
@@ -256,7 +258,7 @@ nav {
 					}
 				}
 				.resume-btn {
-					color: @color-interactive1;
+					color: @color-light;
 					margin-top: @gridspacing * 2;
 					font-weight: bold;
 				}
@@ -268,8 +270,8 @@ nav {
 				height: @gridspacing * 7;
 				width: 100%;
 				margin-top: @gridspacing * 2;
-				color: @color-light;
-				.border(@width: 2px; @color: @color-light);
+				color: @color-interactive2;
+				.border(@width: 2px; @color: @color-interactive2);
 				border-bottom-left-radius: @gridspacing;
 				border-bottom-right-radius: @gridspacing;
 				box-shadow: inset 0 0 0 0 @color-light;
@@ -277,8 +279,8 @@ nav {
 				user-select: none;
 
 				&:hover {
-					box-shadow: inset 420px 0 0 0 @color-light;
-					color: @color-interactive1;
+					box-shadow: inset 420px 0 0 0 @color-interactive2;
+					color: @color-light;
 				}
 
 				.factoid-container {
@@ -303,7 +305,7 @@ nav {
 
 		.profile-content {
 			width: 60%;
-			padding-left: @gridspacing * 6;
+			padding-right: @gridspacing * 6;
 			text-align: justify;
 
 			@media screen and (max-width: 768px) {
@@ -314,8 +316,14 @@ nav {
 				font-size: @font-size;
 				font-weight: bold;
 			}
+
+			p {
+				margin-bottom: @gridspacing;
+			}
+
 			h2 {
 				text-align: left;
+				margin-bottom: @gridspacing * 2;
 			}
 		}
 	}
@@ -323,26 +331,30 @@ nav {
 
 /* contact secion specific */
 #section4 {
-	.flex(@direction: column);
-	.background(@color1: @color-dark; @color2: @color-dark);
+	background-color: @color-dark;
 	color: @color-light;
+	.flex(@direction: column);
 
 	.contact-content {
 		.flex(@direction: column);
-		max-width: 640px;
-		text-align: justify;
+		font-size: @font-size-large;
+		font-weight: lighter;
+		max-width: @media-tablet;
+		text-align: center;
 
 		.contact-buttons {
 			.flex(@justify: space-around);
+			margin-top: @gridspacing * 8;
 			width: 100%;
 
-			.contact-button {
-				.border(@width: 2px; @color: @color-light);
-				padding: @gridspacing * 2;
-				color: @color-light;
+			img {
+				height: @gridspacing * 8;
+				border: 2px solid transparent;
+				padding: @gridspacing;
+				.transition(@duration: @transition-duration);
 
-				span {
-					padding-right: @gridspacing;
+				&:hover {
+					border: 2px solid @color-light;
 				}
 			}
 		}
