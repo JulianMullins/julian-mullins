@@ -15,6 +15,13 @@ $(document).ready(function() {
 	   			bottom: "0px"
 	   		}, 1000);
 
+				// change color on light background
+				if(index === 3) {
+					$(".onepage-pagination li a").addClass("sidebar-dark");
+				} else {
+					$(".onepage-pagination li a").removeClass("sidebar-dark");
+				}
+
 	   },   // This option accepts a callback function. The function will be called after the page moves.
 	   loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
 	   keyboard: true,                  // You can activate the keyboard controls

@@ -46,14 +46,13 @@ body, .onepage-wrapper, html {
   width: 4px;
   height: 4px;
   display: block;
-
 }
 .onepage-pagination li a:before{
   content: '';
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(255,255,255,0.85);
+  background-color: #FBF9FF;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -63,10 +62,21 @@ body, .onepage-wrapper, html {
   width: 10px;
   height: 10px;
   background: none;
-  border: 1px solid white;
+  border: 1px solid #FBF9FF;
   margin-top: -4px;
   left: 8px;
 }
+
+/* additional class for use in changing color on light background */
+.onepage-pagination li .sidebar-dark:before {
+  background-color: #1D1E2C;
+}
+
+.onepage-pagination li .sidebar-dark.active:before {
+  background: none;
+  border: 1px solid #1D1E2C;
+}
+
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
   overflow: auto;
