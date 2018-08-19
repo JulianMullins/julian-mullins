@@ -22,19 +22,31 @@ router.get('/', function(req, res, next) {
 // GET individual work page
 router.get('/:slug', function(req, res, next) {
   var slug = req.params.slug;
-  var workItem;
+  var workItem = [];
 
   for(let i=0; i<Work.length; i++) {
     if(Work[i].slug == slug) {
-      workItem = Work[i];
+      workItem.push(Work[i]);
     }
   }
 
-  res.render('work', {
-    title: title,
-    work: workItem,
-    scrollable: true
-  });
+  if(workItem.length >= 1) {
+    res.render('work', {
+      title: title,
+      work: workItem[0],
+      scrollable: true
+    });
+  } else {
+    let error = {
+      status: '404 Error',
+      stack: null,
+      desc: 'Page Not Found'
+    }
+    res.render('error', {
+      error: error,
+      message: 'After letting loose the search hounds and checking all the usual spots (including the basement), it is with deep regret that I must inform you this page simply couldn\'t be found.'
+    });
+  }
 });
 
 module.exports = router;
