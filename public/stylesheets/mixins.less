@@ -2,6 +2,10 @@
 	border: @width @style @color;
 }
 
+.box-shadow(@xoff: 0; @yoff: 0; @blur: 0; @spread: 0; @color: @color-dark1) {
+	box-shadow: @xoff @yoff @blur @spread @color;
+}
+
 .flex(@direction: row; @justify: center; @align: center; @wrap: nowrap) {
 	display: flex;
 	flex-direction: @direction;

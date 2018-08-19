@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>{{title}}</title>
+	   <title>{{title}}</title>
 
 		<!-- meta tags to be updated later-->
 		<meta name="description" content="">
@@ -26,8 +26,11 @@
 	    <link rel='stylesheet' href='/stylesheets/style.css' />
 
 	    <!-- one-page scroll -->
-		<script src="/javascripts/jquery.onepage-scroll.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="/stylesheets/onepage-scroll.css">
+		{{#if scrollable}}
+		{{else}}
+			<script src="/javascripts/jquery.onepage-scroll.js" type="text/javascript"></script>
+			<link rel="stylesheet" href="/stylesheets/onepage-scroll.css">
+		{{/if}}
 
 		<!-- custom less css file -->
 		<link rel="stylesheet" href="/stylesheets/style.css">

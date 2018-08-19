@@ -5,14 +5,17 @@ var model = require('../models/models');
 var Work = model.Work;
 var SelectedWork = model.SelectedWork;
 
+var title = 'Julian Mullins';
+
 // GET home page
 router.get('/', function(req, res, next) {
 
   res.render('index', {
-  	title: 'Julian Mullins',
+  	title: title,
   	subtitle: "Entrepreneur, Developer & Designer",
     work: Work,
-    selectedWork: SelectedWork
+    selectedWork: SelectedWork,
+    scrollable: false
   });
 });
 
@@ -28,7 +31,9 @@ router.get('/:slug', function(req, res, next) {
   }
 
   res.render('work', {
-    work: workItem
+    title: title,
+    work: workItem,
+    scrollable: true
   });
 });
 

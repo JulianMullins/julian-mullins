@@ -5,11 +5,80 @@
 /* general styles */
 
 body {
+	.flex(@direction: column);
 	background-color: @color-light;
 	font: @font-size @font-family;
 	padding: 0 !important;
 	line-height: @line-height;
+	color: @color-dark1;
+}
+
+header {
+	.flex(@direction: column; @justify: flex-start; @align: flex-start);
+	left: 0;
+	height: 20%;
+	padding: @gridspacing * 3;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: @z-index-medium;
+
+	.main-title {
+		.animation(@name: appear; @duration: @transition-duration*2; @ease: @transition-easing);
+		margin-right: @gridspacing * 2;
+	}
+	.main-subtitle {
+		.animation(@name: appear; @duration: @transition-duration*2; @ease: @transition-easing);
+		font-weight: lighter;
+		padding-bottom: @gridspacing / 4;
+	}
+}
+
+.header-inverted {
+	.flex(@justify: flex-start; @align: center);
+	background-color: @color-dark1;
+	box-shadow: 0 0 2px 0 @color-dark;
 	color: @color-light;
+	height: 10%;
+	padding: 0 @gridspacing * 3;
+
+	a {
+		color: @color-light;
+	}
+}
+
+nav {
+	position: fixed;
+	right: @gridspacing * 3;
+	top: @gridspacing * 3;
+	width: auto;
+	z-index: @z-index-high;
+
+	@media screen and (max-width: @media-tablet) {
+		display: none;
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+
+		:not(:last-child) {
+			padding-right: @gridspacing * 5;
+		}
+
+		a {
+			color: @color-light;
+			font-size: @font-size-large;
+			font-weight: lighter;
+		}
+	}
+}
+
+.main-scrollable {
+	.flex(@direction: column; @justify: flex-start);
+	height: 100%;
+	margin-top: @gridspacing * 10;
+	width: 75%;
 }
 
 h1, h2, h3, h4 {
@@ -32,15 +101,19 @@ h3 {
 a {
 	cursor: pointer;
 	text-decoration: none !important;
+	transition-duration: @transition-duration;
 
 	&:hover {
 		color: @color-interactive2;
-		transition-duration: @transition-duration;
 	}
 }
 
 p {
 	margin: 0;
+}
+
+img {
+	max-width: 100%;
 }
 
 .page-name {
@@ -63,28 +136,6 @@ ul {
 	padding: 0;
 }
 
-nav {
-	position: fixed;
-	right: @gridspacing * 3;
-	top: @gridspacing * 3;
-	width: @media-phone;
-
-	@media screen and (max-width: @media-tablet) {
-		display: none;
-	}
-
-	ul {
-		display: flex;
-		justify-content: space-between;
-
-		a {
-			color: @color-light;
-			font-size: @font-size-large;
-			font-weight: lighter;
-		}
-	}
-}
-
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -94,6 +145,23 @@ nav {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.action {
+	.flex();
+	background-color: @color-light;
+	border-radius: @border-radius;
+	.box-shadow(@spread: 2px; @color: @color-interactive2);
+	color: @color-interactive2;
+	font-weight: bold;
+	padding: @gridspacing * 2;
+	position: relative;
+	transition-duration: @transition-duration;
+
+	&:hover {
+		background-color: @color-interactive2;
+		color: @color-light;
+	}
 }
 
 // work components
@@ -140,11 +208,11 @@ nav {
 			padding: @gridspacing * 2;
 
 			img {
-				max-width: 100%;
 				.transition(@duration: @transition-duration);
 
 				&:hover {
 					max-width: 103%;
+					max-height: auto;
 				}
 			}
 		}
@@ -153,28 +221,13 @@ nav {
 
 /* landing section specific */
 #section1 {
+	color: @color-light;
 	background-color: @color-dark1;
 	.flex(@direction: column);
 
 	#hello {
 		@media screen and (max-width: @media-laptop) {
 			font-size: @font-size-large2;
-		}
-	}
-
-	.main-header {
-		.flex(@direction: column; @align: flex-start);
-		position: fixed;
-		top: @gridspacing * 3;
-		left: @gridspacing * 3;
-		z-index: @z-index-medium;
-
-		.main-title {
-			.animation(@name: appear; @duration: @transition-duration*2; @ease: @transition-easing);
-		}
-		.main-subtitle {
-			.animation(@name: appear; @duration: @transition-duration*2; @ease: @transition-easing);
-			font-weight: lighter;
 		}
 	}
 
@@ -199,8 +252,8 @@ nav {
 }
 
 /* works section specific */
-
 #section2 {
+	color: @color-light;
 	background-color: @color-interactive2;
 
 	.highlights-container {
@@ -331,8 +384,8 @@ nav {
 
 /* contact secion specific */
 #section4 {
-	background-color: @color-dark;
 	color: @color-light;
+	background-color: @color-dark;
 	.flex(@direction: column);
 
 	.contact-content {
@@ -357,6 +410,28 @@ nav {
 					border: 2px solid @color-light;
 				}
 			}
+		}
+	}
+}
+
+// work page styles
+.subject-heading {
+	.flex();
+	width: 100%;
+
+	.subject-cover {
+		width: 55%;
+	}
+
+	.subject-title {
+		border-left: 2px solid @color-dark1;
+		.flex(@direction: column; @align: flex-start);
+		padding-left: @gridspacing * 5;
+		margin-left: @gridspacing * 3;
+		width: 45%;
+
+		h3, p {
+			margin-bottom: @gridspacing * 2;
 		}
 	}
 }
