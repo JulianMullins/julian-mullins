@@ -1,22 +1,19 @@
-<header class="header-inverted">
-  <a href="/"><h1 class="main-title">{{title}}</h1></a>
+<header class="header-inverted" role="banner" aria-aria-labelledby="heading-title">
+  <h1 class="main-title" id="heading-title"><a href="/" aria-label="Return Home">{{title}}</a></h1>
 </header>
 
-<main class="main-scrollable">
+<main class="main-scrollable" role="main" aria-labelledby="main-title">
   <section class="subject-heading">
     <div class="subject-cover">
-      <img src="../images/{{work.mockup}}">
+      <img src="../images/{{work.mockup}}" alt="{{work.name}} mockup">
     </div>
     <div class="subject-title">
-      <h2>{{work.name}}</h2>
-      <h3>{{work.role}}</h3>
+      <h2 id="main-title">{{work.name}}</h2>
+      <p class="main-subtitle">{{work.role}}</p>
       <p>{{work.summary}}</p>
       {{#if work.link}}
-        <a href="{{work.link}}" class="action" target="_blank">Visit Site</a>
+        <a href="{{work.link}}" class="action" target="_blank" aria-label="Visit {{work.name}}">Visit Site</a>
       {{/if}}
     </div>
-  </section>
-
-  <section>
   </section>
 </main>

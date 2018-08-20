@@ -91,6 +91,7 @@ $(document).ready(function() {
 
 	//cycle through fun facts on click
 	var factoidCount = 0;
+	var originalText = $("#fun-fact").text();
 	$('.facts-container').on('click', function(event) {
 		var arr = ["I studied abroad in Costa Rica",
 		"I (also) studied abroad in Spain",
@@ -103,7 +104,7 @@ $(document).ready(function() {
 			photo.fadeOut('slow', function() {
 				photo.attr('src', "../images/profile-pic.jpg");
 			});
-			$('#fun-fact').text("Fun facts about me");
+			$('#fun-fact').text(originalText);
 			factoidCount = -1;
 		}
 

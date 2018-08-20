@@ -1,72 +1,76 @@
-<main class="main">
+<main class="main" role="main" aria-labelledby="main-title">
+	<h1 class="visuallyhidden" id="main-title">{{title}}</h1>
 	<!-- landing section -->
 	<section id="section1">
-		<header>
-			<h1 class="main-title">{{title}}</h1>
-			<h3 class="main-subtitle">{{subtitle}}</h3>
+		<header role="banner" aria-labelledby="heading-title">
+			<h2 class="visuallyhidden">Overview</h2>
+			<p class="main-title">{{title}}</p>
+			<p class="main-subtitle">{{subtitle}}</p>
 
-			<nav>
+			<nav role="navigation" aria-labelledby="menu-title">
+				<h2 class="visuallyhidden" id="menu-title">Main Navigation</h2>
 				<ul>
-					<a href="#section2" id="nav-works"><li>works</li></a>
-					<a href="#section3" id="nav-about"><li>about</li></a>
-					<a href="#section4" id="nav-contact"><li>contact</li></a>
+					<a href="#section2" id="nav-works" aria-label="View My Work"><li>works</li></a>
+					<a href="#section3" id="nav-about" aria-label="Learn About Me"><li>about</li></a>
+					<a href="#section4" id="nav-contact" aria-label="Contact Me"><li>contact</li></a>
 				</ul>
 			</nav>
 		</header>
-		<h2 class="page-name" id="hello">hello</h2>
-
 
 		<div class="highlights-container">
+			<h3 class="visuallyhidden">My Work Highlights</h3>
 			{{#each selectedWork}}
-				<a href="{{this.slug}}">
+				<a href="{{this.slug}}" aria-label="Explore {{this.name}}">
 					<div class="highlight">
 						<div class="highlight-image">
-							<img src="../images/{{this.img}}">
+							<img src="../images/{{this.img}}" alt="{{this.name}} display">
 						</div>
 						<div class="highlight-content">
-							<h2>{{this.name}}</h2>
-							<p>{{this.role}}</p>
+							<h4>{{this.name}}</h4>
+							<p class="lesser-subtitle">{{this.role}}</p>
 						</div>
 					</div>
 				</a>
 			{{/each}}
 		</div>
 
-
-		<img src="../images/arrow-down.svg" class="next-page">
+		<p class="page-name" id="hello">hello</p>
+		<img src="../images/arrow-down.svg" class="next-page" alt="Next page">
 	</section>
 
 	<!-- portfolio/work section -->
 	<section id="section2">
-		<h2 class="page-name">works</h2>
+		<h2 class="visuallyhidden">My Work</h2>
 		<div class="highlights-container">
 
 			{{#each work}}
-			<a href="{{this.slug}}">
+			<a href="{{this.slug}}" aria-label="Explore {{this.name}}">
 				<div class="highlight">
 					<div class="highlight-image">
-						<img src="../images/{{this.img}}">
+						<img src="../images/{{this.img}}" alt="{{this.name}} display">
 					</div>
 					<div class="highlight-content">
-						<h2>{{this.name}}</h2>
-						<p>{{this.role}}</p>
+						<h3>{{this.name}}</h3>
+						<p class="lesser-subtitle">{{this.role}}</p>
 					</div>
 				</div>
 			</a>
 			{{/each}}
 
 		</div>
+
+		<p class="page-name">works</p>
 	</section>
 
 	<!-- about me section -->
 	<section id="section3">
-		<h2 class="page-name">about</h2>
+		<h2 class="visuallyhidden">About</h2>
 
 		<div class="profile-container">
 			<div class="profile-content">
-				<h2>Hi, I'm Julian Mullins.</h2>
+				<p class="lesser-title">Hi, I'm Julian Mullins.</p>
 				<p>I'm an entrepreneur, designer and developer from Eugene, Oregon.</p>
-				<p>I am currently working as a product manager and developer for TripRiff, a travel platform built by travelers, for travelers. Having assisted in the launch of our web app MVP (<a href="https://www.tripriff.com" target="_blank">www.tripriff.com</a>), I am now gathering user feedback and helping to redesign and build out the next iteration of the product, centered around our company's mission to broaden the worldviews of explorers.</p>
+				<p>I am currently working as a product manager and developer for TripRiff, a travel platform built by travelers, for travelers. Having assisted in the launch of our web app MVP (<a href="https://www.tripriff.com" target="_blank" aria-label="Visit TripRiff">www.tripriff.com</a>), I am now gathering user feedback and helping to redesign and build out the next iteration of the product, centered around our company's mission to broaden the worldviews of explorers.</p>
 				<p>I recently graduated magna cum laude with a degree in business administration at Babson College (Money Magazine's #1 college in the U.S.). Last year I studied abroad in Seville, Spain and conducted an internship at a Spanish software development firm. The year prior, I was a participant in IFSA-Butler's Spanish immersion program in Costa Rica where I studied economics and international relations while expanding my cultural and environmental horizons in a rich and diverse country.</p>
 				<p>I am a quick learner, detail-oriented, and self-starting, with excellent time-management skills and a knack for teamwork and leadership. While expanding my knowledge of business and technology, I am dedicated to cultivating strong personal relationships.</p>
 			</div>
@@ -74,50 +78,55 @@
 			<div class="infobar-container">
 				<div class="profile-pic-container">
 					<div class="picture-border">
-						<img src="../images/profile-pic.jpg" class="profile-pic">
+						<img src="../images/profile-pic.jpg" class="profile-pic" alt="My profile">
 					</div>
 
 					<!-- front-loading images to enhance animations -->
-					<img src="../images/ballet.jpg" class="visuallyhidden">
-					<img src="../images/break-dance.jpg" class="visuallyhidden">
-					<img src="../images/costa-rica.jpg" class="visuallyhidden">
-					<img src="../images/spain.jpg" class="visuallyhidden">
-					<img src="../images/trance.jpg" class="visuallyhidden">
+					<img src="../images/ballet.jpg" class="visuallyhidden" alt="Ballet">
+					<img src="../images/break-dance.jpg" class="visuallyhidden" alt="Breakdance">
+					<img src="../images/costa-rica.jpg" class="visuallyhidden" alt="Costa Rica">
+					<img src="../images/spain.jpg" class="visuallyhidden" alt="Spain">
+					<img src="../images/trance.jpg" class="visuallyhidden" alt="Trance">
 					<!-- end -->
 
-					<a href="./JulianMullins.pdf" target="_blank" class="resume-btn">Résumé</a>
+					<a href="./JulianMullins.pdf" target="_blank" class="resume-btn" aria-label="View My Resume">Résumé</a>
 				</div>
 				<div class="facts-container">
 					<div class="factoid-container">
-						<h4 id="fun-fact">Fun facts about me</h4>
+						<p class="" id="fun-fact">Random facts</p>
 					</div>
 					<div class="refresh-container">
-						<img src="../images/arrow-right.svg">
+						<img src="../images/arrow-right.svg" alt="Next item">
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<p class="page-name">about</p>
 	</section>
 
 	<!-- contact/social media section -->
 	<section id="section4">
-		<h2 class="page-name">contact</h2>
+		<h2 class="visuallyhidden">Contact</h2>
+
 		<div class="contact-content">
 			<p>Want to collaborate on a project, need some design or development help, or simply want to chat? I'm usually found somewhere around the globe, but thanks to the wonders of the Internet, please feel free to reach out at any time. I'm excited to hear from you!</p>
 			<div class="contact-buttons">
-					<a href="mailto:mullinsjulian@gmail.com" target="_blank">
-						<img src="../images/mail.svg">
+					<a href="mailto:mullinsjulian@gmail.com" target="_blank" aria-label="Email Me">
+						<img src="../images/mail.svg" alt="Email">
 					</a>
-					<a href="https://github.com/JulianMullins" target="_blank">
-						<img src="../images/github.svg">
+					<a href="https://github.com/JulianMullins" target="_blank" aria-label="Visit My GitHub">
+						<img src="../images/github.svg" alt="GitHub">
 					</a>
-					<a href="https://www.linkedin.com/in/mullinsjulian/" target="_blank">
-						<img src="../images/linkedin.svg">
+					<a href="https://www.linkedin.com/in/mullinsjulian/" target="_blank" aria-label="View My LinkedIn Profile">
+						<img src="../images/linkedin.svg" alt="LinkedIn">
 					</a>
-					<a href="https://www.instagram.com/mullinsjulian/" target="_blank">
-						<img src="../images/instagram.svg">
+					<a href="https://www.instagram.com/mullinsjulian/" target="_blank" aria-label="View My Instagram">
+						<img src="../images/instagram.svg" alt="Instagram">
 					</a>
 			</div>
 		</div>
+
+		<p class="page-name">contact</p>
 	</section>
 </main>

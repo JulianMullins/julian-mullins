@@ -37,36 +37,33 @@
 		<link rel="stylesheet" href="/stylesheets/style.css">
 	</head>
 	<body class="container-fluid">
-    <header class="header-inverted">
+    <header class="header-inverted" role="banner" aria-labelledby="heading-title">
       {{#if error.status}}
-        <a href="/"><h1 class="main-title">{{error.status}}</h1></a>
+        <h1 class="main-title" id="heading-title"><a href="/" aria-label="Return to Home">{{error.status}}</a></h1>
       {{else}}
-        <a href="/"><h1 class="main-title">{{message}}</h1></a>
+        <h1 class="main-title" id="heading-title"><a href="/" aria-label="Return to Home">{{message}}</a></h1>
       {{/if}}
     </header>
 
-    <main class="main-scrollable">
+    <main class="main-scrollable" role="main" aria-labelledby="main-title">
       <section class="subject-heading">
         <div class="subject-cover">
           {{#if error.stack}}
             <pre>{{error.stack}}</pre>
           {{else}}
-            <img src="../images/404dog.jpg">
+            <img src="../images/404dog.jpg" alt="404 Dog">
           {{/if}}
         </div>
         <div class="subject-title">
           {{#if error.status}}
-            <h2>{{error.status}}</h2>
+            <h2 id="main-title">{{error.status}}</h2>
           {{/if}}
           {{#if error.desc}}
-            <h3>{{error.desc}}</h3>
+            <p class="main-subtitle">{{error.desc}}</p>
           {{/if}}
           <p>{{message}}</p>
-          <a href="/" class="action">Return Home</a>
+          <a href="/" class="action" aria-label="Return Home">Return Home</a>
         </div>
-      </section>
-
-      <section>
       </section>
     </main>
 	</body>
